@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neibor Peru - Academia Deportiva</title>
+ <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos de encabezado */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Estilos de barra de navegación */
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Estilos de sección de inicio */
+        section#inicio {
+            background-image: url('fondo.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Estilos de caja de información */
+        .info-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        /* Estilos de pie de página */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        /* Estilos de ventana emergente (popup) */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-height: 70%;
+            overflow-y: auto;
+        }
+
+        .popup-content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Estilos específicos para pantallas más pequeñas */
+        @media only screen and (max-width: 600px) {
+            /* Puedes ajustar estos estilos según sea necesario para pantallas más pequeñas */
+            header, nav, .info-container {
+                padding: 0.5em;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .popup {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Neibor Peru</h1>
+        <p>Academia Deportiva</p>
+    </header>
+
+    <nav>
+        <a href="#inicio" onclick="mostrarPopup('inicio-popup')">Inicio</a>
+        <a href="#nosotros" onclick="mostrarPopup('historia-popup')">Nosotros</a>
+        <a href="#servicios" onclick="mostrarPopup('servicios-popup')">Servicios</a>
+        <a href="#contacto" onclick="mostrarPopup('contacto-popup')">Contacto</a>
+    </nav>
+
+    <section id="inicio" class="hero-image">
+        <div class="hero-text">
+            <h2>Bienvenido a Neibor Peru</h2>
+            <p>Descubre tu pasión por el deporte con nosotros</p>
+        </div>
+    </section>
+
+    <div id="inicio-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('inicio-popup')">&times;</span>
+            <h2>Inicio</h2>
+            <P>Visión de Neibor Peru - Academia Deportiva:</P>
+            <P> "Ser reconocidos como la principal academia deportiva en la región, fomentando un ambiente donde la pasión por el deporte se combina con la excelencia académica y personal. Nos esforzamos por ser un referente en el desarrollo integral de nuestros estudiantes, brindándoles las herramientas y experiencias que les permitan alcanzar su máximo potencial no solo en el ámbito deportivo, sino también en su vida cotidiana."</P>
+            
+            
+            <P>Misión de Neibor Peru - Academia Deportiva:</P>
+            
+            <P>"En Neibor Peru, nos comprometemos a proporcionar una educación deportiva de calidad que nutra el cuerpo, la mente y el espíritu de nuestros estudiantes. Nos esforzamos por crear un entorno inclusivo y motivador donde cada individuo, independientemente de su habilidad o antecedentes, pueda descubrir y cultivar su amor por el deporte. A través de programas especializados y entrenadores dedicados, buscamos inculcar valores fundamentales como la disciplina, el trabajo en equipo, la integridad y el respeto. Nuestra misión es ser un catalizador para el crecimiento personal y el éxito en la vida de quienes forman parte de nuestra comunidad deportiva."</P>
+        </div>
+    </div>
+
+    <section id="nosotros" class="info-container">
+        <div class="info-box" onclick="mostrarPopup('historia-popup')">
+            <h3>Nuestra Historia</h3>
+            <p>Conoce más sobre la historia y valores de Neibor Peru.</p>
+        </div>
+        <div class="info-box" onclick="mostrarPopup('equipo-popup')">
+            <h3>Nuestro Equipo</h3>
+            <p>Conoce a nuestro equipo de entrenadores y profesionales.</p>
+        </div>
+    </section>
+
+    <div id="historia-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('historia-popup')">&times;</span>
+            <h2>Nuestra Historia</h2>
+           <p>En las montañas escarpadas y los valles verdes de Santa Cruz de Cutervo, un lugar donde la naturaleza se mezcla con la rica herencia cultural, nació un joven visionario llamado Neil Borman Chilcón Tello. A pesar de los humildes orígenes en este rincón encantador del norte de Perú, Neil siempre llevó consigo una pasión desbordante por el deporte y un deseo ferviente de hacer una diferencia positiva en la vida de los demás.
+
+</p>
+            
+  <p>Con sus raíces profundamente arraigadas en Santa Cruz de Cutervo, Neil decidió llevar a cabo su ambicioso proyecto en la cercana ciudad de Jaén. Aunque la ciudad está a poca distancia de su lugar de nacimiento, Jaén se convirtió en el lienzo para plasmar su visión de Neibor Peru. Neil sintió que la vibrante comunidad de Jaén ofrecía el escenario perfecto para hacer florecer su academia deportiva y contagiar la pasión por el deporte a una audiencia más amplia.</p>  
+  
+               <p>Santa Cruz de Cutervo, con su encanto rural y tradiciones arraigadas, sigue siendo el hogar de Neil, el lugar que le proporcionó la base sólida de su ética de trabajo y valores. Sin embargo, la ciudad de Jaén se ha convertido en el epicentro de su proyecto, donde las montañas de Cutervo se encuentran con la emoción del deporte moderno.</p>
+            
+            <P>Neil ha llevado consigo las historias de su tierra natal, incorporando la tenacidad y la autenticidad de Santa Cruz de Cutervo en cada paso de Neibor Peru en Jaén. La comunidad ha respondido con entusiasmo, acogiendo la iniciativa con los brazos abiertos y participando activamente en las diversas actividades que ofrece la academia.</P>
+            <P>En este viaje desde Santa Cruz de Cutervo hasta Jaén, Neil Borman Chilcón Tello está tejiendo una historia única que celebra la diversidad cultural y la unión a través del deporte. Cada grito de victoria en las canchas de Jaén lleva consigo el eco de las montañas de Cutervo, recordándonos que, independientemente de dónde comencemos, el espíritu de la pasión y la determinación puede trascender fronteras geográficas.</P>
+            
+        </div>
+    </div>
+
+    <div id="equipo-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('equipo-popup')">&times;</span>
+            <h2>Nuestro Equipo</h2>
+            <p>En Neibor Peru, creemos que el éxito de nuestra academia deportiva radica en la dedicación y profesionalismo de nuestro talentoso equipo de entrenadores y profesionales. Cada miembro de nuestro equipo es cuidadosamente seleccionado y se prepara de la mejor manera para brindar una experiencia deportiva excepcional a nuestros estudiantes.</p>
+
+        <p>Nuestros entrenadores no solo poseen habilidades técnicas excepcionales, sino que también comparten una pasión común por inspirar y guiar a los estudiantes hacia el éxito en sus disciplinas deportivas. Se someten a una formación continua y se mantienen actualizados con las últimas tendencias y métodos de entrenamiento para garantizar que estén a la vanguardia del rendimiento deportivo.</p>
+
+        <p>En Neibor Peru, nos enorgullece fomentar un ambiente de trabajo en equipo y colaboración entre nuestros entrenadores. Cada uno aporta su experiencia única, permitiendo que nuestros estudiantes se beneficien de una variedad de perspectivas y enfoques de entrenamiento.</p>
+
+        <p>Además, nuestro equipo no solo se centra en el desarrollo físico, sino que también presta atención al bienestar emocional y mental de nuestros estudiantes. Creemos en el crecimiento integral, y nuestros profesionales están comprometidos en ayudar a cada estudiante a alcanzar su máximo potencial tanto dentro como fuera de la cancha.</p>
+
+        <p>Al elegir Neibor Peru, te unes a una comunidad dedicada a la excelencia deportiva y al desarrollo personal. Nuestro equipo está aquí para apoyarte en cada paso de tu viaje deportivo, guiándote hacia el éxito y celebrando tus logros.</p>
+        </div>
+    </div>
+
+    <section id="servicios" class="info-container">
+        <div class="info-box" onclick="mostrarPopup('programas-popup')">
+            <h3>Programas Deportivos</h3>
+            <p>Descubre los diversos programas deportivos que ofrecemos.</p>
+        </div>
+        <div class="info-box" onclick="mostrarPopup('instalaciones-popup')">
+            <h3>Instalaciones</h3>
+            <p>Explora nuestras modernas instalaciones para la práctica deportiva.</p>
+        </div>
+    </section>
+
+    <div id="programas-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('programas-popup')">&times;</span>
+            <h2>Programas Deportivos</h2>
+             <p>En Neibor Peru, nos enorgullece ofrecer una variedad de programas deportivos diseñados para inspirar la pasión por el deporte y fomentar el desarrollo integral de nuestros estudiantes. Nuestros programas están meticulosamente diseñados y adaptados para brindar experiencias enriquecedoras en diversas disciplinas. Descubre nuestras emocionantes opciones:</p>
+
+        <h3>Fútbol</h3>
+        <p>Nuestro programa de fútbol se centra en desarrollar habilidades técnicas, tácticas y físicas, fomentando el trabajo en equipo y la competitividad de manera saludable. Nuestros entrenadores capacitados trabajan para maximizar el potencial de cada jugador, creando un ambiente donde la pasión por el fútbol florece.</p>
+
+        <h3>Vóley</h3>
+        <p>Sumérgete en el mundo del vóley con nuestro programa dedicado. Desde fundamentos básicos hasta estrategias avanzadas, nuestro equipo de entrenadores te guiará a través de un viaje emocionante de desarrollo técnico y trabajo en equipo en la cancha de vóley.</p>
+
+        <h3>Ajedrez</h3>
+        <p>Explora el juego milenario del ajedrez, donde la estrategia y la concentración son clave. Nuestro programa de ajedrez está diseñado para jugadores de todos los niveles, desde principiantes hasta avanzados, proporcionando lecciones estructuradas y oportunidades para participar en competiciones.</p>
+
+        <h3>Natación</h3>
+        <p>Sumérgete en las aguas con nuestro programa de natación. Nuestros instructores certificados te guiarán a través de lecciones personalizadas, enfocándose en técnicas de natación, seguridad en el agua y desarrollo físico, permitiéndote disfrutar del mundo acuático con confianza.</p>
+
+        <h3>Baloncesto</h3>
+        <p>Conviértete en un jugador completo con nuestro programa de baloncesto. Desde habilidades básicas hasta estrategias avanzadas de juego, nuestro equipo de entrenadores te ayudará a mejorar tu destreza en la cancha, desarrollar tu resistencia y comprender las complejidades del juego.</p>
+
+        <h3>Defensa Personal</h3>
+        <p>Descubre la importancia de la autodefensa con nuestro programa especializado. Aprende técnicas efectivas de defensa personal, mejora tu confianza y conciencia situacional. Nuestros instructores capacitados te ayudarán a adquirir habilidades que pueden marcar la diferencia en situaciones cotidianas.</p>
+
+        <p>Únete a nosotros en Neibor Peru y elige el programa que se adapte a tus intereses y metas deportivas. Estamos comprometidos a proporcionar experiencias deportivas significativas que impulsen el crecimiento y la excelencia en cada estudiante.</p>
+        </div>
+    </div>
+
+    <div id="instalaciones-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('instalaciones-popup')">&times;</span>
+            <h2>Instalaciones</h2>
+          
+            <video controls>
+                <source src="VIDEO.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+    </div>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Estamos aquí para responder a tus preguntas. ¡Contáctanos!</p>
+        <!-- Agrega un formulario de contacto aquí si es necesario -->
+    </section>
+
+    <div id="contacto-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="cerrarPopup('contacto-popup')">&times;</span>
+            <h2>Contacto</h2>
+            <P>965-205-177</P>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Neibor Peru - Academia Deportiva</p>
+    </footer>
+
+    <script>
+        function mostrarPopup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = 'block';
+        }
+
+        function cerrarPopup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
